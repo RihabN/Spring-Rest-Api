@@ -1,0 +1,170 @@
+{
+    "info": {
+        "name": "AMS REST API Collection",
+        "description": "Complete API collection for Article Management System",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:8080",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Providers",
+            "item": [
+                {
+                    "name": "Get All Providers",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/providers/list",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["providers", "list"]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Provider by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/providers/1",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["providers", "1"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Provider",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Tech Supplies Inc\",\n    \"address\": \"456 Tech Avenue, Silicon Valley\",\n    \"email\": \"contact@techsupplies.com\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/providers/add",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["providers", "add"]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Provider",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Updated Tech Supplies Inc\",\n    \"address\": \"789 New Tech Street\",\n    \"email\": \"newemail@techsupplies.com\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/providers/1",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["providers", "1"]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Provider",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/providers/1",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["providers", "1"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Articles",
+            "item": [
+                {
+                    "name": "Get All Articles",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/articles/list",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["articles", "list"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Article",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"label\": \"iPhone 15 Pro\",\n    \"price\": 1199.99,\n    \"picture\": \"iphone15pro.jpg\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/articles/add/1",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["articles", "add", "1"]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Article",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"label\": \"iPhone 15 Pro Max\",\n    \"price\": 1399.99,\n    \"picture\": \"iphone15promax.jpg\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/articles/update/1/1",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["articles", "update", "1", "1"]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Article",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/articles/delete/1",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["articles", "delete", "1"]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

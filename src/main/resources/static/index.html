@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AMS API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .subtitle {
+            font-size: 1.2em;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+        .endpoints {
+            margin-top: 30px;
+            text-align: left;
+            display: inline-block;
+        }
+        .endpoint {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+        }
+        .method {
+            font-weight: bold;
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AMS API 1.0</h1>
+        <p class="subtitle">Article Management System REST API</p>
+        
+        <div class="endpoints">
+            <h3>Available Endpoints:</h3>
+            <div class="endpoint">
+                <span class="method">GET</span> /providers/list - Get all providers
+            </div>
+            <div class="endpoint">
+                <span class="method">POST</span> /providers/add - Create provider
+            </div>
+            <div class="endpoint">
+                <span class="method">GET</span> /providers/{id} - Get provider by ID
+            </div>
+            <div class="endpoint">
+                <span class="method">PUT</span> /providers/{id} - Update provider
+            </div>
+            <div class="endpoint">
+                <span class="method">DELETE</span> /providers/{id} - Delete provider
+            </div>
+            <br>
+            <div class="endpoint">
+                <span class="method">GET</span> /articles/list - Get all articles
+            </div>
+            <div class="endpoint">
+                <span class="method">POST</span> /articles/add/{providerId} - Create article
+            </div>
+            <div class="endpoint">
+                <span class="method">PUT</span> /articles/update/{providerId}/{articleId} - Update article
+            </div>
+            <div class="endpoint">
+                <span class="method">DELETE</span> /articles/delete/{articleId} - Delete article
+            </div>
+        </div>
+    </div>
+</body>
+</html>
